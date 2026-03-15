@@ -17,7 +17,7 @@ export default function WhyUsSection() {
 
   const itemVariants = {
     hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' as const } },
   };
 
   const features = [
@@ -64,7 +64,7 @@ export default function WhyUsSection() {
         className="mx-auto grid max-w-5xl gap-8 md:grid-cols-2 lg:gap-12"
       >
         {features.map((feature, index) => (
-          <motion.div 
+          <motion.div
             key={index}
             variants={itemVariants}
             className="flex flex-col items-center rounded-2xl bg-[var(--color-bg-alt)] p-8 text-center transition-shadow hover:shadow-md border border-[var(--color-border)]"
