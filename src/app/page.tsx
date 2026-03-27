@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
+import VideoSection from "@/components/VideoSection";
 import ProblemSection from "@/components/ProblemSection";
 import SolutionSection from "@/components/SolutionSection";
 import LiveDemoSection from "@/components/LiveDemoSection";
@@ -16,6 +17,7 @@ export default function Home() {
       <Navbar />
       <main className="flex min-h-screen flex-col">
         <HeroSection />
+        <VideoSection />
         <ProblemSection />
         <SolutionSection />
         <LiveDemoSection />
