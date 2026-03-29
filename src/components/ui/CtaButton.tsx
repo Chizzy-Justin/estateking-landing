@@ -45,6 +45,11 @@ export default function CtaButton({ variant, label, href, icon, size = 'md', cla
       href={href}
       target="_blank"
       rel="noopener noreferrer"
+      onClick={() => {
+        if (typeof window !== 'undefined' && (window as any).gtag_report_conversion) {
+          (window as any).gtag_report_conversion(href);
+        }
+      }}
       className={`inline-flex items-center justify-center gap-2 rounded-full font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg ${bgClass} ${textClass} ${borderClass} ${sizeClasses[size]} ${className}`}
     >
       {icon || defaultIcon}

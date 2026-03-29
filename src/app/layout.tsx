@@ -54,6 +54,21 @@ export default function RootLayout({
             gtag('js', new Date());
 
             gtag('config', 'AW-406161718');
+
+            window.gtag_report_conversion = function(url) {
+              var callback = function () {
+                if (typeof(url) != 'undefined' && url) {
+                  // Direct URL navigation is handled by the component for React/Next compatibility
+                }
+              };
+              gtag('event', 'conversion', {
+                  'send_to': 'AW-406161718/g7WDCJflxpEcELaS1sEB',
+                  'value': 1.0,
+                  'currency': 'USD',
+                  'event_callback': callback
+              });
+              return false;
+            }
           `}
         </Script>
         {children}
