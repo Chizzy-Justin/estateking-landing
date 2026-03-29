@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Plus_Jakarta_Sans } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 const inter = Inter({
@@ -41,7 +42,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} ${plusJakartaSans.variable}`}>
-      <body>
+      <body className="antialiased font-sans">
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-406161718"
+          strategy="afterInteractive"
+        />
+        <Script id="google-ads-tracking" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'AW-406161718');
+          `}
+        </Script>
         {children}
       </body>
     </html>
