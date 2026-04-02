@@ -17,7 +17,7 @@ export default function Home() {
       <Navbar />
       <main className="flex min-h-screen flex-col">
         <HeroSection />
-        <VideoSection />
+        {/* <VideoSection /> */}
         <ProblemSection />
         <SolutionSection />
         <LiveDemoSection />
